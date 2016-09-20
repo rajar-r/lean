@@ -1,0 +1,329 @@
+
+
+Day-1
+--------------------------------------------------
+1. JS Introduction
+
+2. JS Concurrency-Model
+
+3. JS Data-Structures
+
+4. JS Closures ...
+
+5. JS Inheritene
+
+6. JS ES-2015(ES6) New Features
+
+----------------------------------------------------
+
+
+ JavaScript Lang
+ 
+ --> scripting lang for web-pages in browser-envi
+
+ +
+ --> server-side lang on Node.js
+
+ --> stand alone appln
+ 
+ --> mobile appln
+ 
+ ---------------------
+ 
+ Features
+ 
+ --> functional programming-lang
+ --> OOP
+ --> dynamic data-types
+ --> with closures supports async programming.
+ --> supports inheritence with prototypes
+ 
+ 
+ --> single-threaded lang
+ --> better-concurrency 
+ 
+ --------------------------------------
+ 
+ 
+ JS-lang is an impln 'ECMAScript' spec
+ 
+ 
+ latest : ES6 / ECMAScript-2015
+ 
+ --------------------------------------
+ 
+ How to run .js programs ?
+ 
+ 	we need JS-engine 
+
+
+ browser-envi
+ 
+ 
+ chrome  --> v8 (c++)
+ firefox --> rhino ( java ) / spidermonkey
+ IE      --> chakra
+ safari  --> nitro
+ 
+ 
+ non browser-envi
+ 
+ Node.JS --> v8 
+ JVM     --> nashorn   , from JDK 1.8 
+ Apache CouchDB
+ MongoDB
+ ElasticSearch
+ Adobe
+ 
+ ....
+
+all JS-engines follows ECMAScript spec
+
+------------------------------------------
+
+
+
+JS lang is
+
+ --> single-threaded lang
+ --> supports betters concurrency
+ 
+ --> Non blocking IO
+ 
+ --> callback function ?
+ --> asynchrous function execution?
+ 
+ ------------------------------
+ 
+
+   browser-envi
+   
+     e.g chrome
+     
+     
+     1. JS-engine ( v8 )
+     
+        a. call-stack
+        b. heap
+        
+     2. Web APIs  ( DOM, XHR , Timer m HTML5 APIs )
+     
+     3. Message/callback queue
+     
+     4. Event-Loop   
+     
+     
+ -----------------------------------    
+ 
+ ref
+ 
+ http://latentflip.com/loupe/?code=!!!
+ 
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+ 
+ ----------------------------------
+ 
+ 
+ JS - scope/context-chain & hoisting
+ 
+ 
+ by default , JS runtime has one global 'execution-context' on
+ startup.
+ 
+ and one 'global-object'
+ 
+ browser-envi
+ 
+ --> window
+ 
+ Node-envi
+ 
+ --> process and global
+ 
+ also by default all global var and functions will become properties of global-object
+ 
+ 
+ execution-context => memory which contains args & local variables
+ to execute instructions. ( stack-frame )
+ 
+ 
+ context - 2 phases
+ 
+ phase-1 : context creation phase
+ 
+ 		 	all variables with 'var' keyword ( anywhere) will get hoisted ( lifting-up ) to top of context with default value  'undefined'	
+ 
+ pahse-2 : context execution phase
+ 
+ 
+ -------------------------------------------------------------
+ 
+ imp-note:
+ 
+ every function invocation also create new execution-context which is child of above-context.
+
+ -------------------------------------------------------------
+
+in JS,
+
+every eceution-context must be owned by 'one-object === this'
+
+
+-------------------------------------------------
+
+
+// Day-2
+
+
+ 1. JS - Inheritence
+ 
+ 2. JS - modules
+ 
+         AMD  ( RequireJS)
+         commonJS
+         
+         ES6 modules
+
+ 3. ES6 New Features
+
+ 4. JS - patterns
+ 
+    
+
+-------------------------------------------------
+
+
+ JS - Inheritence
+
+
+  till ES-5 , JS-lang is class-free language.
+
+
+  how to implement inheritence ?
+  
+  using prototypes
+  
+  
+-------------------------------------------------
+
+ 
+  ==  vs ===
+  
+   refer :
+   
+ https://dorey.github.io/JavaScript-Equality-Table/ 
+ 
+ 
+ -------------------------------------------------
+ 
+ 
+ JS - modules
+ 
+ 
+ till ES-5 , JS-lang didnt have module spec
+ 
+ 
+ 
+ to avoid globals 
+ 
+ pattern ===> IIFE or Self Executable func
+ 
+ 
+ syntax
+ 
+ (function(){
+ 	
+ })();
+ 
+ 
+ -----------------------------------------
+ 
+ module-standards and module-loaders
+ 
+ 
+ 
+ some third-party Javascript communities defined some module stadards to create and load modules into JS-envi
+ 
+ 
+ 1. AMD ( Asynch Module Definition )
+ 
+ 2. commonJS
+ 
+ 3. SystemJS  
+ 
+ 
+ ECMAScript community , in ES6 , given module spec
+ 
+ 4. ES6 modules
+ 
+ ---------------------------------------------
+  
+  
+  
+  AMD spec
+  
+  
+    1. define()  --> to define/create module
+    2. require() --> to load modules
+  
+  
+    define('mid',[dependencies],function(){});
+    
+    require(loader-config,[mid],callback);
+    
+    
+    AMD module loaders : implementations of AMD spec
+    
+    many...
+    
+    a. RequireJS  ( mostlu used AMD loader )
+    b. DOJO
+    c. .....
+    
+    
+--------------------------------------------- 
+
+commonJS - module spec
+
+
+--> simple
+--> every .js file is an module
+--> to load module , use require('module');
+
+
+Node.js uses commonJS as default module-standard.
+
+
+http://browserify.org/
+
+--> to convert common-JS modules to browser-use.
+
+----------------------------------------------
+
+
+https://github.com/nagabhushanamn/DEP-PCC-LeanPortal.git
+
+
+----------------------------------------------
+
+
+ES6 - modules
+
+
+
+
+----------------------------------------------
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
