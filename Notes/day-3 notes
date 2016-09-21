@@ -1,0 +1,165 @@
+
+
+----------------------------
+
+1. ES6 New features
+
+2. JS - patterns
+
+3. HTML5 & APIs
+
+4. RWD ( Responsive Concepts )
+
+---------------------------
+
+
+JS - lang
+
+  Types ( data structures )
+  
+  1. primitives
+  
+  	1. string
+  	2. number
+  	3. boolean
+  	4. null
+  	5. undefined
+  	
+  	6. symbol ( es6 )
+  
+  3. references
+  
+     --> objects
+     
+     
+ -----------------------------
+ 
+ if you are behind CTS proxy
+ 
+ npm config set proxy http://proxy.cognizant.com:6050
+ npm config set strict-ssl false
+     
+     
+ npm install/i live-server -g    
+         
+ 
+--------------------------------     
+
+   
+      JS Learning-path
+      
+         
+      1. MDN Javascript
+      2. JS Good Parts ( book ) 
+      3. www.exploringjs.com       
+      4. www.jstherightway.org
+      
+      
+-----------------------------------------------------------    
+
+  
+    
+   client-side ( browser )   
+        
+        
+    what .js can do on browser with HTML-page? 
+    
+        
+        JS-programs can bring any dynamic behav using
+        browser's Web-APIs into HTML page
+        
+        Web-API :- functionality implemented and abstracted by browser.
+        
+        all browsers abstracted thiers APIs as JS objects and functions.
+        
+        e.g
+        
+        DOM,XHR,Timer, HTML5 APIs
+        
+    
+    	JS-programs + Web-APIs ===> any dynamic behav to HTML page
+    	
+    	
+     	using DOM API
+     	
+      --> can create/select/update/delete HTML elememnts
+      --> can change element's attribute values
+      --> can change element's style
+      --> can change element's text content
+      --> can validate form-fields
+      --> can create rich UI-componets 
+         ( html + css + JS + imgaes + Data)
+         
+      --> ...
+      
+        using XHR
+           
+      --> can communicate with server-side pgms asynch
+          and update results in existing page
+          
+          
+       HTML-5 APIs
+       
+          ..   
+                                        
+    -----------------------------------------------------------   
+    
+  	plain JS ( script written by you ) Limitations or Complexity
+  	
+  	--> browser compatibility
+  	--> more code even for simple operations
+  	
+  	--> performance ( e.g DOM selection and manipulation )
+  	--> memory management  ( cleaning unused DOM elements , JS-logic)
+  	--> code organization and patterns is difficult to implement
+  	    Model , Behavior , View
+  	    
+  	--> manual data-binding is complex to implement , cant predic t bahev of appln
+  	 
+  	    
+  	 soln: using JS libraries and F.Ws
+  	 
+  	          
+  	     1. jQuery  
+  	     
+  	              --> libray with standard browser-side func                                       
+          
+          
+            limitations of jquery
+            
+            --> data-binding between view and Model is manual.
+            
+                buggy ..
+                poor performace..
+                
+             soln:
+             
+              
+              2. Knockout JS library..    
+              
+                    --> declarative data-binding JS library.      
+            
+            
+                                                          
+    --------------------------------------------------------------                                                                                                                                                      
+            
+            
+              
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+                              
+                                  
+               
+                     
+             
+                 
+                         
+     
+     
+     

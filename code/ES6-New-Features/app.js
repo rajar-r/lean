@@ -148,22 +148,128 @@
 // }
 
 // Es-6
-class Person{
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    sayName() {
+// class Person{
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+//     sayName() {
         
-    }
-    static staFunc() {
+//     }
+//     static staFunc() {
         
-    }
-}
+//     }
+// }
 
 
-var p = new Person('nag', 32);
-p.sayName();
+// var p = new Person('nag', 32);
+// p.sayName();
 
-Person.staFunc();
+// Person.staFunc();
 //----------------------------------------
+
+
+
+
+
+
+// var symbol1 = Symbol('identity-string');
+// var symbol2 = Symbol('identity-string');
+
+
+// var obj = {
+//     name: 'JS',
+//     [Symbol.for('article')]:'this is JS article'
+// };
+
+
+// console.log(obj[Symbol.for('article')]);
+
+
+// var s1 = Symbol('name');
+// var company = {[s1]:'CTS'};
+
+// var s2 = Symbol('name');
+// var customer = {[s2]:'BLT'};
+
+
+//-----------------------------------
+
+
+
+
+// var map = {
+//     "key1": 123,
+//     "key2": 321
+// };
+
+//-------------------------------------
+
+
+// let idMaker = {
+//     [Symbol.iterator]() {
+//         let nextId=8000;
+//         return {
+//             next() {
+//                 return {
+//                     done: false,
+//                     value: nextId++
+//                 }
+//             }
+//         }
+//     }
+// };
+
+
+// // es6
+
+// for (let id of idMaker) {
+//     console.log(id);
+// }
+
+
+//------------------------------------------------------------
+
+
+var hotel = {
+    getFood: function () {
+       
+        var promise = new Promise(function (resolve, reject) { 
+            
+            setTimeout(function () { 
+                //console.log('food ready....resolving promise');
+                //resolve('BIRYANI>>>>>>>');
+                reject('SORRYYYYY');
+            },5000);
+
+        });
+
+        return promise;
+    }
+};
+
+
+var trainer = {
+    doTeach: function () {
+        console.log('teaching Js....');
+        console.log('hungry.....requesting hotel for food');
+        var promise=hotel.getFood();  // (a)sync communication... ( (un)blocks further teaching..)
+        console.log('got promise...');
+        var newPromise=promise.then(function (result) { 
+            //console.log('yummy ' + result);
+            return result + " soft drinks";
+        }, function (reason) { 
+            console.log('ooops , shud go out lunch');
+            });
+        
+        newPromise.then(function (newResult) {
+            console.log(newResult);
+         });
+        
+        console.log('continue further teaching...end');
+    }
+};
+
+trainer.doTeach();
+
+//------------------------------------------------------------
