@@ -32,7 +32,7 @@
 //     console.log('Loaded..');
 // }
 
-//-----------------------------------------------------
+//-----------------------------------------------------------------------------------
 
 // using jQuery
 
@@ -58,14 +58,12 @@ $(document).ready(function (e) {
     }); 
 
 
-
 //-----------------------------------------
 
     var $userName = $('#userName');
     var $span = $('.badge');
 
-    var user = {name:''};
-
+    var user = { name: '' };  // View-Model
 
     $('#userBtn').click(function () { 
         // loader data from server
@@ -80,15 +78,35 @@ $(document).ready(function (e) {
 
     function doDataBinding() {
         $span.text(user.name);
+        $userName.val(user.name);
     }
 
     doDataBinding();
 
+//-----------------------------------------------------------------------------------
 
+  // using KO
+
+    // Model
+    var user = { name: 'Nag' };  // loaded from server-side
     
 
+    // View-Model
+    function UserViewModel(user) {
+        var self = this;
+        self.userName = ko.observable(user.name);
+        self.loadUser = function () {
+            // load user from server-side
+            self.userName('Nagabhushanam');
+        }
+    }
 
-});
+    var vm = new UserViewModel(user);
+    console.log(vm);
+
+    // bind ViewModel to View
+    ko.applyBindings(vm,document.getElementById('ko_box'));
 
 
+});    
 

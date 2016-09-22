@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    </head>
+    <body class="container">
+       
+       <div id="box1" ng-app="shop">
+
+           <div class="page-header">shop-app</div>
+
+           <div data-ng-controller="ShopController as sc" class="list-group">
+
+               <!--View-->
+                <div data-ng-repeat="product in products" class="list-group-item">
+                    <h3>{{product.name}}</h4>  <!-- ${product.name} -->
+                    <h4>{{product.price}}</h4>
+                    <p>{{product.desc}}</p>
+                </div>   
+            
+           </div>    
+
+       </div>    
+
+      
+
+
+       <script src="bower_components/angular/angular.js"></script>
+       <script src="js/app.js"></script>
+
+    </body>
+</html>

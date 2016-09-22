@@ -116,6 +116,8 @@ JS - lang
   	    
   	--> manual data-binding is complex to implement , cant predic t bahev of appln
   	 
+  	--> UI components  
+  	
   	    
   	 soln: using JS libraries and F.Ws
   	 
@@ -139,8 +141,27 @@ JS - lang
               
                     --> declarative data-binding JS library.      
             
+           
+           JS Frameworks
+           
             
-                                                          
+             --> Google   :  Angular 1.x / Angular 2.x ( fast , new-syntax)
+             
+             --> Facebook :   ReactJS ( View Library )  using Virtual-DOM  ( fast )
+             
+                                +
+                                
+                              Redux  based 'flux' pattern   ( component state management)
+                 
+                 
+             --> Bacbone
+             
+                                                           
+              UI components 
+              
+              --> DOJO
+              --> ExtJS from sencha ( commericial )                                                                                                                                                                                             
+                                                                                                                                                                                                         
     --------------------------------------------------------------                                                                                                                                                      
             
             
