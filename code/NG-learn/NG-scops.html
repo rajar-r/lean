@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+   
+        <style>
+            .ng-scope{
+                border:1px solid red;
+                padding:15px;
+                margin:5px;
+            }
+        </style>
+
+    </head>
+    <body class="container" ng-app="demo">
+       
+       <div class="page-header">NG scopes</div>
+
+       <span class="badge">{{color}}</span>
+       <button ng-click="changeColor()">change</button>
+
+       <div ng-controller="ColorController">
+            
+            <span class="badge">{{color}}</span>
+            <button ng-click="changeColor()">change</button>
+
+           <div ng-controller="AnotherController">
+                <span class="badge">{{color}}</span>
+           </div>
+           <div ng-controller="AnotherController">
+                <span class="badge">{{color}}</span>
+           </div>    
+
+       </div>
+      
+    
+       <script src="bower_components/angular/angular.js"></script>
+       <script>
+           var module=angular.module('demo',[]);
+           module.run(function($rootScope){
+               $rootScope.color="red"
+               $rootScope.changeColor=function(){
+                   $rootScope.color="blue"
+               }
+           });
+
+           module.controller('ColorController',function($scope){
+              $scope.color="green";
+               $scope.changeColor=function(){
+                   $scope.color="yellow"
+                   //$scope.$parent
+                   //$scope.emit(''); // up
+                  // $scope.$broadcast() // down
+               }
+           });
+
+           module.controller('AnotherController',function($scope){
+           });
+
+       </script>
+
+    </body>
+</html>

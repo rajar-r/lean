@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    </head>
+    <body class="container" ng-app="demo">
+       
+       <div class="page-header">NG learn</div>
+       <div ng-controller="UserController">
+       <select ng-options="n for n in [5,10,20]" ng-model="userCount"></select>
+       <input ng-model="userCount"/>
+       <table  class="table table-bordered table-condensed table-stripped">
+           <tr ng-repeat="user in users">
+               <td>{{user.fname}}</td>
+               <td>{{user.lname}}</td>
+           </tr>    
+       </table>  
+       </div>  
+
+    
+       <script src="bower_components/angular/angular.js"></script>
+       <script>
+           var module=angular.module('demo',[]);
+           module.controller('UserController',function($scope,$rootScope,$http){
+              $scope.userCount=5; 
+              $scope.$watch('userCount',function(newCount,oldCount){
+                  loadUsers(newCount);
+              });
+             function loadUsers(count){
+                $http.jsonp(`http://www.filltext.com/?callback=JSON_CALLBACK&rows=${count}&fname={firstName}&lname={lastName}`)
+                .success(function (data) {
+                    $scope.users = data
+                });
+             }
+
+           });
+       </script>
+
+    </body>
+</html>

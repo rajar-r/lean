@@ -1,0 +1,25 @@
+
+
+
+How NG implementing 2-way data-binding ?
+
+
+NG life-cycle ,   on bootstrap
+
+phase-1 : compilation
+
+on every DOM elememnt which having directive(s)/expressions , 
+where angular will register 'watch expressions' / listeners
+
+
+watch-expressions  will read/write model data when becomes dirty.
+
+
+all watch-expressions are executed by 'digest-loop' given NG-framework.
+
+
+--------------------------
+
+we can also register  custom watchers
+
+-----------------------------

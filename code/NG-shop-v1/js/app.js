@@ -10,13 +10,18 @@ var module = angular.module('shop', []);
 var items = [
     {
         name: 'Laptop',
-        price: 198000,
-        desc: 'new mac pro'
+        price: 198000,    // number
+        desc: 'new mac pro',
+        canBuy: false,
+        notAvailable: false,
+        discount:10000
     },
     {
         name: 'Mobile',
         price: 19000,
-        desc: 'new iphon7'
+        desc: 'new iphon7',
+        canBuy: true,
+        notAvailable: false,
     }
 ]
 
@@ -26,7 +31,35 @@ var items = [
 
 module.controller('ShopController', function ($scope) {   // servlet
     //this.products = items;
-    $scope.products = items;  // request.setAttribute('products',items);
+    $scope.products = items; // View-Model // request.setAttribute('products',items);
+});
+
+module.controller('TabsController', function ($scope) {
+
+    // ng-init="tab=1"
+    $scope.tab = 1;
+    $scope.changeTab = function (tabIndex) {
+        $scope.tab = tabIndex;
+    }
+    $scope.isTabSelected=function(tabIndex){
+        return $scope.tab === tabIndex;
+    }
+
+ });
+
+
+//------------------------------------------
+
+// Filter
+
+module.filter('priceDiscount', function () { 
+    return function (originalPrice, discount) {
+        if (discount) {
+            return originalPrice - discount;
+        } else {
+            return originalPrice - 1;
+        }    
+    }
 });
 
 

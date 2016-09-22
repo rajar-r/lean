@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    </head>
+    <body class="container" ng-app="demo">
+       
+       <div class="page-header">NG learn</div>
+
+       Trainer : {{trainer}}
+
+      <div class="well" ng-controller="UserController">
+          Name : <input ng-model="name"/> 
+          <button ng-click="loadUser()"> load ( ng-click ) </button>
+          <button onclick="window.loadUser()"> load ( on-click ) </button>
+          <hr/>
+          Hello <span ng-bind="name"></span>
+      <div>    
+    
+       <script src="bower_components/angular/angular.js"></script>
+       <script>
+           var module=angular.module('demo',[]);
+           module.controller('UserController',function($scope,$rootScope){
+               
+               $scope.name='';
+             
+               $scope.loadUser=function(){
+                   $scope.name='Nag';
+               }
+
+               // non angular functions... 
+               window.loadUser=function(){
+                   console.log('loading user...');
+                   
+                    // $scope.$apply(function(){
+                    //     $scope.name='Ria';
+                    //     $rootScope.trainer='Nagabhushanam';
+                    // }); 
+
+                    $scope.name='Ria';
+                    $rootScope.trainer='Nagabhushanam';
+                    
+                    $scope.$digest();
+                   
+
+               }
+
+               $scope.$watch('name',function(newVal,oldVal){
+                   console.log('custom watcher on $scope.name property');
+                   console.log(newVal+" - "+oldVal);
+               });
+
+               
+
+           });
+       </script>
+
+    </body>
+</html>
