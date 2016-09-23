@@ -1,0 +1,5 @@
+<div>
+    <h3>{{product.name | uppercase}}</h4>  <!-- ${product.name} -->
+    <h4>{{product.price | priceDiscount:product.discount | currency : '&#8377;':2 }}</h4>
+    <button ng-show="product.canBuy" class="btn btn-primary">Buy</button>                
+</div>    

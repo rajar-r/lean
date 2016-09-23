@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+        <link href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css" rel="stylesheet"/>
+    </head>
+    <body class="container">
+       
+       <div class="page-header"> why we need directives ?</div>
+
+       <input id="dob"/>
+       
+       <hr/>
+
+       <div ng-app="demo">
+            <input data-my-date-picker/>
+
+            <input data-my-date-picker/>
+
+       </div>   
+    
+       <script src="bower_components/jquery/dist/jquery.js"></script>
+       <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+
+       <script src="bower_components/angular/angular.js"></script>
+
+
+       <!--imperative programming-->
+
+       <script>
+        //    $(document).ready(function(){
+        //        $('#dob').datepicker();
+        //    });
+      </script>
+
+      <script>
+          var mod=angular.module('demo',[]);
+
+          mod.directive('myDatePicker',function(){
+              return{
+                  restrict:'A',
+                  compile:function(ele){
+                      // DOM manipulation 
+                      console.log('myDatePicker:compile');
+                      console.dir(ele);
+                      ele.addClass('input-lg');
+
+                      return{
+                          pre:function(scope,ele,attr){
+                              // initialize model to child directives
+                              console.log('myDatePicker:preLink');
+                          },
+                          post:function(scope,ele){
+                               // final touch-up , registering DOM listeners..
+                               console.log('myDatePicker:postLink');
+                               ele.datepicker();
+                          }
+                      }
+                  },
+                  controller:function($scope){
+                      // common behav to child-directives
+                      console.log('myDatePicker:controller');
+                      //.....
+                  },
+                //   link:function(){
+                //       console.log('myDatePicker:postLink');
+                //       // can register any DOM event listeners....
+                //   }
+              }
+          });
+
+        //   ref: https://www.toptal.com/angular-js/angular-js-demystifying-directives
+
+      </script>
+
+    </body>
+</html>

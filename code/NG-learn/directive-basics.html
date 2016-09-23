@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+        <link href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css" rel="stylesheet"/>
+        <style>
+            .ng-scope{
+                border:1px solid red;
+                padding:10px;
+                margin:5px;
+            }
+        </style>    
+    </head>
+    <body class="container">
+       
+       <div class="page-header">  basic directive</div>
+
+       <div ng-app="demo">
+        
+           <!--<div my-hello-world></div>-->
+           <!--<my-hello-world></my-hello-world>-->
+           <!--<div class="my-hello-world"></div>-->
+
+           <div ng-controller="ColorController">
+               <input ng-model="color" />
+               
+               <hr/>
+               <div my-hello-world my-color="color"></div>
+               <hr/>
+               <div my-hello-world></div>
+
+           </div>    
+          
+
+       </div>   
+    
+      
+
+       <script src="bower_components/angular/angular.js"></script>
+
+
+
+      <script>
+          var mod=angular.module('demo',[]);
+
+          mod.controller('ColorController',function($scope){
+              $scope.color='yellow';
+          });
+
+          mod.directive('myHelloWorld',function(){
+              return{
+                  restrict:'AECM',
+                  replace:false,
+                  templateUrl:'hello-world.html',
+                //scope:false,
+                //scope:true,
+                scope:{
+                    color:'=myColor'
+                }, // isolated scope
+                //   compile:function(ele){
+                //       console.log('myHelloWorld : compile');
+                //       console.dir(ele);
+                //       ele.addClass('well');
+                //   },
+                // controller:function($scope){
+                //     console.log('myHelloWorld : controller');
+                //     $scope.color="yellow";
+                //     $scope.changeColor=function(){
+                //     }
+                // },
+                link:function(scope,ele,attrs){
+                    console.log('myHelloWorld : postLink');
+                    //console.log(scope.color);
+                    //scope.color='grey';
+
+                    ele.on('mouseover',function(){
+                        ele.css('cursor','pointer');
+                    });
+                    ele.on('click',function(){
+                        //ele.css('background-color','#def');
+                        console.log('changing color...');
+                        scope.color='#def';
+                        scope.$digest();
+                    });
+
+                    // if(attrs.myColor){
+                    //     scope.color=attrs.myColor;
+                    // }
+
+                }
+
+
+              }
+          });
+
+
+      </script>
+
+    </body>
+</html>

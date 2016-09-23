@@ -1,0 +1,21 @@
+{
+  "name": "NG-shop-v1",
+  "homepage": "https://github.com/nagabhushanamn/DEP-PCC-LeanPortal",
+  "authors": [
+    "nagabhushanamn <nagabhushanamn@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8"
+  }
+}
