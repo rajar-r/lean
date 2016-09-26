@@ -12,13 +12,17 @@ var core_1 = require('@angular/core');
 var forms_1 = require('@angular/forms');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
+var courses_component_1 = require('./courses.component');
+var course_detail_component_1 = require('./course-detail.component');
+var dashborad_component_1 = require('./dashborad.component');
+var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing],
+            declarations: [app_component_1.AppComponent, courses_component_1.CoursesComponent, course_detail_component_1.CourseDetailComponent, dashborad_component_1.DashBoardComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

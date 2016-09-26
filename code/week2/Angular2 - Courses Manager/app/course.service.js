@@ -9,18 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Lean stack';
+var mock_courses_1 = require('./mock-courses');
+var CourseService = (function () {
+    function CourseService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n            <h2 class=\"page-header\"> {{title}} </h2> \n            <ul class=\"nav nav-pills\">\n                <li><a routerLink=\"/dashboard\">Dashbord</a></li>\n                <li><a routerLink=\"/courses\">Courses</a></li>\n            </ul>\n            <hr/>\n            <router-outlet></router-outlet>\n        "
-        }), 
+    CourseService.prototype.getCourses = function () {
+        return Promise.resolve(mock_courses_1.COURSES);
+    };
+    CourseService.prototype.getCourse = function (id) {
+        return this.getCourses()
+            .then(function (courses) { return courses.find(function (course) { return course.id === id; }); });
+    };
+    CourseService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CourseService);
+    return CourseService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CourseService = CourseService;
+//# sourceMappingURL=course.service.js.map

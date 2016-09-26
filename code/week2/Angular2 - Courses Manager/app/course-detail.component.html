@@ -1,0 +1,10 @@
+<div class="panel panel-default" *ngIf="course"> 
+    <div class="panel-heading">{{course.name}} details</div>
+    <div class="panel-body">
+        Id: {{course.id}} <hr/>
+        <input [(ngModel)]="course.name"/>
+    </div>
+
+    <button class="btn btn-primary" (click)="goBack()"> back </button>
+
+</div>
