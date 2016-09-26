@@ -1,0 +1,43 @@
+[
+	{
+		"id": 11,
+		"name": "Laptop",
+		"price": 0,
+		"make": "2016-06-20T00:00:00.000Z",
+		"description": "New Model",
+		"canBuy":true,
+		"images": 
+		[
+			{
+				"thumb": "images/Laptop.png",
+				"full": ""
+			},
+
+			{
+				"thumb": "images/Laptop.png",
+				"full": ""
+			}
+		]
+	},
+
+	{
+		"id": 12,
+		"name": "Mobile",
+		"price": 0,
+		"make": "2016-06-20T00:00:00.000Z",
+		"description": "New Model",
+		"canBuy":true,
+		"images": 
+		[
+			{
+				"thumb": "images/Mobile.png",
+				"full": ""
+			},
+
+			{
+				"thumb": "images/Mobile.png",
+				"full": ""
+			}
+		]
+	}
+]

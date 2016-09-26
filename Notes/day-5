@@ -1,0 +1,73 @@
+
+
+indranil.majumdar@cognizant.com
+
+  Angular 1.x
+  -------------
+  
+  --> code oraganization
+  --> 2-way data-binding
+  --> controllers  --> data/behav to view
+  --> filters/pipes
+  
+  
+  --> declrative programming  with directives
+  
+  
+  -------------------------------------
+  
+    NG - compoenents
+    
+    UI logic
+    a. controllers
+    b. filters
+    c. directives  + controllers
+    
+    
+    
+    No UI logic  --> service components
+      
+        
+            
+  ------------------------------------
+  
+  
+  
+  how t create 'service components' in NG ?
+  
+  
+  service-provider  with factory-metod 
+  
+  
+  -------------------------------------
+  
+  
+  
+  
+  Routing  --> Navigation 
+  
+  --> SPA
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

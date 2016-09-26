@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    </head>
+    <body >
+       
+     <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Product Management</a></li>  
+            </ul>     
+        </div>
+
+     </nav>   
+
+       <div id="box1" ng-app="shop" class="container">
+          
+           <div data-ng-controller="ShopController as sc" class="list-group">
+               
+               <!--View-->
+                <div ng-if="message" class="well">
+                    {{message|json}}
+                </div>
+                <div ng-hide="product.notAvailable" 
+                     data-ng-repeat="product in products | limitTo:10 | orderBy:'price':true " class="list-group-item">
+                    
+                    <product-title></product-title>
+                    <hr/>
+                    <product-tabs></product-tabs>          
+
+                </div>   
+           </div>    
+       </div>    
+
+    
+       <script src="bower_components/angular/angular.js"></script>
+       <script src="bower_components/angular-resource/angular-resource.js"></script>
+
+       <script src="js/shop.service.js"></script>
+       <script src="js/shop.js"></script>
+
+    </body>
+</html>

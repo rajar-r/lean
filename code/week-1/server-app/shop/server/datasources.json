@@ -1,0 +1,9 @@
+{
+  "mongoDS": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "shop",
+    "name": "mongoDS",
+    "connector": "mongodb"
+  }
+}

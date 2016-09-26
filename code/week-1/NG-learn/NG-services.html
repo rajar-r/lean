@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    </head>
+    <body class="container">
+       
+       <div class="page-header"> NG - services </div>
+
+       <div ng-app="demo">
+           
+           <div class="well" ng-controller="HitController">
+               <button ng-click="doHit()">{{count}}</button>
+           </div>  
+           <div class="well" ng-controller="HitController">
+               <button ng-click="doHit()">{{count}}</button>
+           </div>   
+           <div class="well" ng-controller="KickController">
+               <button ng-click="doKick()">{{count}}</button>
+           </div>    
+
+
+       </div>   
+    
+       <script src="bower_components/angular/angular.js"></script>
+
+
+      <script>
+          
+          var mod=angular.module('demo',[]);
+
+          // customize third-party/reusable service-providers before service instance created..
+          mod.config(function(countServiceProvider){
+              console.log('demo module config phase..');
+              //countServiceProvider.setInitCount(100);
+          });
+
+          mod.controller('HitController',function($scope,countService){
+              console.log('New HitCOntroller instance created...');
+              $scope.count=countService.getCount();
+              $scope.doHit=function(){
+                  countService.doCount();
+                  $scope.count+=1;
+                   $scope.count=countService.getCount();
+              }
+          });
+
+          mod.controller('KickController',function($scope,countService){
+              console.log('New KickCOntroller instance created...');
+              $scope.count=countService.getCount();
+              $scope.doKick=function(){
+                  countService.doCount();
+                  $scope.count=countService.getCount();
+              }
+          });
+
+          //---------------------------------------------------
+
+
+        //   mod.provider('countService',function(){
+        //       console.log('countServiceProvider instantiated..');
+
+        //       var count=0;
+
+        //     //   this.setInitCount=function(initCount){
+        //     //       this.count=initCount;
+        //     //       console.log('new count set...');
+        //     //   } 
+
+        //       // factory-method
+        //       this.$get=function(){
+        //           console.log('countServiceProvider-s bfactory method called...');
+        //           var service={
+        //               doCount:function(){
+        //                   count++;
+        //               },
+        //               getCount:function(){
+        //                   return count;
+        //               }
+        //           };
+        //           return service;
+        //       }
+        //   });
+
+          //------------------------------------------------------
+
+          // shortcut-1 
+
+        //   mod.factory('countService',function(){
+        //     console.log('countServiceProvider-s bfactory method called...');
+        //     var count=0;
+        //     var service={
+        //         doCount:function(){
+        //             count++;
+        //         },
+        //         getCount:function(){
+        //             return count;
+        //         }
+        //     };
+        //     return service;
+        //   });
+
+          //------------------------------------------------------
+
+          // shortcut-2
+
+          function Counter(){
+              this.count=0;
+              this.doCount=function(){
+                  this.count++;
+              }
+              this.getCount=function(){
+                  return this.count;
+              }
+          }
+
+        // mod.factory('countService',function(){
+        //     console.log('countServiceProvider-s bfactory method called...');
+        //     var service=new Counter();
+        //     return service;
+        //   });
+
+        // mod.service('counterService',Counter);
+
+        //----------------------------------------------------
+
+        var count=0;
+        var o={
+                doCount:function(){
+                    count++;
+                },
+                getCount:function(){
+                    return count;
+                }
+         };
+
+         mod.value('countService',o);
+
+
+          //----------------------------------------------------
+
+
+      </script>
+
+    </body>
+</html>
