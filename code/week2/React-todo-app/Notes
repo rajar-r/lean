@@ -1,0 +1,39 @@
+
+
+todo-app
+------------
+
+ref : https://facebook.github.io/react/docs/thinking-in-react.html
+
+
+step-1: Break the UI into a component hierarchy
+
+Step 2: Build a static version in React
+
+
+Step 3: Identify the minimal (but complete) representation of UI state
+Step 4: Identify where your state should live
+
+        
+
+Step 5: Add inverse data flow 
+
+
+
+---------------------------------------------------
+
+react-component
+-------------------
+
+    data
+   
+
+        a.state  --> private data of component  ( mutable )
+        
+         when component's state change , 
+         react automatically re-render then comp and its childresns by calling render() method
+
+
+        b.props  --> input-data from parent-comp to child-component ( immutable )
+
+---------------------------------------------------        
