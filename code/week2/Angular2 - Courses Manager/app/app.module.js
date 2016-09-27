@@ -9,21 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
 var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
+var http_1 = require('@angular/http');
+require('./rxjs-extensions');
+// Imports for loading & configuring the in-memory web api
+var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
+var in_memory_data_service_1 = require('./in-memory-data.service');
 var app_component_1 = require('./app.component');
 var courses_component_1 = require('./courses.component');
 var course_detail_component_1 = require('./course-detail.component');
-var dashborad_component_1 = require('./dashborad.component');
+var dashboard_component_1 = require('./dashboard.component');
 var app_routing_1 = require('./app.routing');
+var course_service_1 = require('./course.service');
+var course_search_component_1 = require('./course-search.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent, courses_component_1.CoursesComponent, course_detail_component_1.CourseDetailComponent, dashborad_component_1.DashBoardComponent],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                http_1.HttpModule,
+                angular2_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+                app_routing_1.routing],
+            declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, course_search_component_1.CourseSearchComponent, courses_component_1.CoursesComponent, course_detail_component_1.CourseDetailComponent],
+            providers: [course_service_1.CourseService],
+            bootstrap: [app_component_1.AppComponent],
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

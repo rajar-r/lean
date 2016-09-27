@@ -1,0 +1,28 @@
+<div class="col-md-6 col-sm-6 col-xs-6">
+<div class="panel panel-primary">
+    <div class="panel-heading"> course list </div>
+    
+    <!--<div>
+        <label>Course name:</label> <input #heroName />
+        <button (click)="add(heroName.value); heroName.value=''">Add </button>
+    </div>-->
+
+    <ul class="courses">
+        <li *ngFor="let course of courses" (click)="onSelect(course)" [class.selected]="course === selectedCourse">
+            <span class="badge">{{course.id}}</span> {{course.name}}
+             <!--<button class="delete"
+                     (click)="delete(course); $event.stopPropagation()">x</button>-->
+        </li>
+    </ul>
+</div>
+</div>
+
+<div class="col-md-6 col-sm-6 col-xs-6">
+    <div *ngIf="selectedCourse" class="panel panel-primary">
+    <div class="panel-heading"> course view </div>
+    <div class="panel-body">
+         {{selectedCourse.name | uppercase}} is popular course<hr/>
+        <button (click)="gotoDetail()">View Details</button>
+    </div>  
+    </div> 
+</div>

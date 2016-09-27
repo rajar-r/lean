@@ -1,0 +1,168 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'i' ]
+2 info using npm@3.9.0
+3 info using node@v5.3.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData @angular/angular-in-memory-web-api
+20 silly mapToRegistry name @angular/angular-in-memory-web-api
+21 silly mapToRegistry scope (from package name) @angular
+22 verbose mapToRegistry no registry URL found in name for scope @angular
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry data Result {
+25 silly mapToRegistry   raw: '@angular/angular-in-memory-web-api',
+25 silly mapToRegistry   scope: '@angular',
+25 silly mapToRegistry   name: '@angular/angular-in-memory-web-api',
+25 silly mapToRegistry   rawSpec: '',
+25 silly mapToRegistry   spec: 'latest',
+25 silly mapToRegistry   type: 'tag' }
+26 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fangular-in-memory-web-api
+27 silly fetchNamedPackageData @angular/angular2-in-memory-web-api
+28 silly mapToRegistry name @angular/angular2-in-memory-web-api
+29 silly mapToRegistry scope (from package name) @angular
+30 verbose mapToRegistry no registry URL found in name for scope @angular
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry data Result {
+33 silly mapToRegistry   raw: '@angular/angular2-in-memory-web-api',
+33 silly mapToRegistry   scope: '@angular',
+33 silly mapToRegistry   name: '@angular/angular2-in-memory-web-api',
+33 silly mapToRegistry   rawSpec: '',
+33 silly mapToRegistry   spec: 'latest',
+33 silly mapToRegistry   type: 'tag' }
+34 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fangular2-in-memory-web-api
+35 verbose request uri https://registry.npmjs.org/@angular%2fangular-in-memory-web-api
+36 verbose request no auth needed
+37 info attempt registry request try #1 at 10:13:25 AM
+38 verbose request using bearer token for auth
+39 verbose request id ebd8826c52222c4e
+40 http request GET https://registry.npmjs.org/@angular%2fangular-in-memory-web-api
+41 verbose request uri https://registry.npmjs.org/@angular%2fangular2-in-memory-web-api
+42 verbose request no auth needed
+43 info attempt registry request try #1 at 10:13:25 AM
+44 verbose request using bearer token for auth
+45 http request GET https://registry.npmjs.org/@angular%2fangular2-in-memory-web-api
+46 http 404 https://registry.npmjs.org/@angular%2fangular-in-memory-web-api
+47 verbose headers { 'content-type': 'application/json',
+47 verbose headers   'cache-control': 'max-age=0',
+47 verbose headers   'content-length': '21',
+47 verbose headers   'accept-ranges': 'bytes',
+47 verbose headers   date: 'Tue, 27 Sep 2016 04:43:27 GMT',
+47 verbose headers   via: '1.1 varnish',
+47 verbose headers   connection: 'keep-alive',
+47 verbose headers   'x-served-by': 'cache-sin6921-SIN',
+47 verbose headers   'x-cache': 'MISS',
+47 verbose headers   'x-cache-hits': '0',
+47 verbose headers   'x-timer': 'S1474951407.418471,VS0,VE239' }
+48 silly get cb [ 404,
+48 silly get   { 'content-type': 'application/json',
+48 silly get     'cache-control': 'max-age=0',
+48 silly get     'content-length': '21',
+48 silly get     'accept-ranges': 'bytes',
+48 silly get     date: 'Tue, 27 Sep 2016 04:43:27 GMT',
+48 silly get     via: '1.1 varnish',
+48 silly get     connection: 'keep-alive',
+48 silly get     'x-served-by': 'cache-sin6921-SIN',
+48 silly get     'x-cache': 'MISS',
+48 silly get     'x-cache-hits': '0',
+48 silly get     'x-timer': 'S1474951407.418471,VS0,VE239' } ]
+49 silly fetchPackageMetaData Error: Not found : @angular/angular-in-memory-web-api
+49 silly fetchPackageMetaData     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+49 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+49 silly fetchPackageMetaData     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+49 silly fetchPackageMetaData     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+49 silly fetchPackageMetaData     at emitTwo (events.js:87:13)
+49 silly fetchPackageMetaData     at Request.emit (events.js:172:7)
+49 silly fetchPackageMetaData     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+49 silly fetchPackageMetaData     at emitOne (events.js:82:20)
+49 silly fetchPackageMetaData     at Request.emit (events.js:169:7)
+49 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+49 silly fetchPackageMetaData  error for @angular/angular-in-memory-web-api@^0.1.1 { [Error: Not found : @angular/angular-in-memory-web-api]
+49 silly fetchPackageMetaData   pkgid: '@angular/angular-in-memory-web-api',
+49 silly fetchPackageMetaData   statusCode: 404,
+49 silly fetchPackageMetaData   code: 'E404' }
+50 http 404 https://registry.npmjs.org/@angular%2fangular2-in-memory-web-api
+51 verbose headers { 'content-type': 'application/json',
+51 verbose headers   'cache-control': 'max-age=0',
+51 verbose headers   'content-length': '21',
+51 verbose headers   'accept-ranges': 'bytes',
+51 verbose headers   date: 'Tue, 27 Sep 2016 04:43:28 GMT',
+51 verbose headers   via: '1.1 varnish',
+51 verbose headers   connection: 'keep-alive',
+51 verbose headers   'x-served-by': 'cache-sin6924-SIN',
+51 verbose headers   'x-cache': 'MISS',
+51 verbose headers   'x-cache-hits': '0',
+51 verbose headers   'x-timer': 'S1474951407.409380,VS0,VE1256' }
+52 silly get cb [ 404,
+52 silly get   { 'content-type': 'application/json',
+52 silly get     'cache-control': 'max-age=0',
+52 silly get     'content-length': '21',
+52 silly get     'accept-ranges': 'bytes',
+52 silly get     date: 'Tue, 27 Sep 2016 04:43:28 GMT',
+52 silly get     via: '1.1 varnish',
+52 silly get     connection: 'keep-alive',
+52 silly get     'x-served-by': 'cache-sin6924-SIN',
+52 silly get     'x-cache': 'MISS',
+52 silly get     'x-cache-hits': '0',
+52 silly get     'x-timer': 'S1474951407.409380,VS0,VE1256' } ]
+53 silly fetchPackageMetaData Error: Not found : @angular/angular2-in-memory-web-api
+53 silly fetchPackageMetaData     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+53 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+53 silly fetchPackageMetaData     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+53 silly fetchPackageMetaData     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+53 silly fetchPackageMetaData     at emitTwo (events.js:87:13)
+53 silly fetchPackageMetaData     at Request.emit (events.js:172:7)
+53 silly fetchPackageMetaData     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+53 silly fetchPackageMetaData     at emitOne (events.js:82:20)
+53 silly fetchPackageMetaData     at Request.emit (events.js:169:7)
+53 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+53 silly fetchPackageMetaData  error for @angular/angular2-in-memory-web-api@0.0.20 { [Error: Not found : @angular/angular2-in-memory-web-api]
+53 silly fetchPackageMetaData   pkgid: '@angular/angular2-in-memory-web-api',
+53 silly fetchPackageMetaData   statusCode: 404,
+53 silly fetchPackageMetaData   code: 'E404' }
+54 silly rollbackFailedOptional Starting
+55 silly rollbackFailedOptional Finishing
+56 silly runTopLevelLifecycles Starting
+57 silly runTopLevelLifecycles Finishing
+58 silly install printInstalled
+59 verbose stack Error: Not found : @angular/angular-in-memory-web-api
+59 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+59 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+59 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+59 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+59 verbose stack     at emitTwo (events.js:87:13)
+59 verbose stack     at Request.emit (events.js:172:7)
+59 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+59 verbose stack     at emitOne (events.js:82:20)
+59 verbose stack     at Request.emit (events.js:169:7)
+59 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+60 verbose statusCode 404
+61 verbose pkgid @angular/angular-in-memory-web-api
+62 verbose cwd /Users/nagabhushanamn/Desktop/JS-world/code/week2/Angular2 - Courses Manager
+63 error Darwin 15.5.0
+64 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "i"
+65 error node v5.3.0
+66 error npm  v3.9.0
+67 error code E404
+68 error 404 Not found : @angular/angular-in-memory-web-api
+69 error 404
+70 error 404 '@angular/angular-in-memory-web-api' is not in the npm registry.
+71 error 404 You should bug the author to publish it (or use the name yourself!)
+72 error 404 It was specified as a dependency of 'angular2-training-app'
+73 error 404 Note that you can also install from a
+74 error 404 tarball, folder, http url, or git url.
+75 verbose exit [ 1, true ]

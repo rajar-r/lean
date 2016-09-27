@@ -1,102 +1,59 @@
-import { Component,OnInit } from '@angular/core';
-import {Course } from './course.ts';
 
-import {CourseService} from './course.service'
-import {Router} from '@angular/router';
+
+import { Component } from '@angular/core';
+import {Course} from './course';
+import {CourseService} from './course.service';
+import { OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 
 @Component({
-    selector: 'my-courses',
-    providers: [CourseService],
-    template: `
-        
-                 <ul class="courses">
-                    <li *ngFor="let course of courses" 
-                         (click)="onSelect(course)" 
-                         [class.selected]="selectedCourse===course">
-                        <span class="badge">{{course.id}}</span>{{course.name}}
-                    </li>
-                 </ul>   
-
-                 <my-course-detail [course]="selectedCourse"></my-course-detail>
-
-                 `,
-    styles: [`
-                .selected {
-                background-color: #CFD8DC !important;
-                color: white;
-                }
-                .courses {
-                margin: 0 0 2em 0;
-                list-style-type: none;
-                padding: 0;
-                width: 15em;
-                }
-                .courses li {
-                cursor: pointer;
-                position: relative;
-                left: 0;
-                background-color: #EEE;
-                margin: .5em;
-                padding: .3em 0;
-                height: 1.6em;
-                border-radius: 4px;
-                }
-                .courses li.selected:hover {
-                background-color: #BBD8DC !important;
-                color: white;
-                }
-                .courses li:hover {
-                color: #607D8B;
-                background-color: #DDD;
-                left: .1em;
-                }
-                .courses .text {
-                position: relative;
-                top: -3px;
-                }
-                .courses .badge {
-                display: inline-block;
-                font-size: small;
-                color: white;
-                padding: 0.8em 0.7em 0 0.7em;
-                background-color: #607D8B;
-                line-height: 1em;
-                position: relative;
-                left: -1px;
-                top: -4px;
-                height: 1.8em;
-                margin-right: .8em;
-                border-radius: 4px 0 0 4px;
-                }`]
-}
-)
+  selector: 'my-course-list',
+  templateUrl: './app/courses.component.html',
+  styleUrls: ['./app/courses.component.css']
+})
 export class CoursesComponent implements OnInit {
-   
-    selectedCourse: Course;
-    courses: Course[];
+  courses: Course[];
+  selectedCourse: Course;
 
-    // dependency injection    
-    constructor(private courseService:CourseService,private router:Router) {
-    }
-    
-    // lifecycle
-    ngOnInit() {
-        //var couserService = new CourseService();
-        //this.courses = this.courseService.getCourses(); // sync call
-        this.getCourses();
-    }
+  constructor(private router: Router, private courseService: CourseService) { }
 
-    getCourses() {
-        this.courseService.getCourses().then(courses=>this.courses=courses);
-    }
-   
-    onSelect(course) {
-        this.selectedCourse = course;
-    }
+  onSelect(course: Course): void {
+    this.selectedCourse = course;
+  }
 
-    gotoDetail(): void{
-        this.router.navigate(['/detail',this.selectedCourse.id]);
-    }
+  getCourses(): void {
+    this.courseService.getCourses().then(courses => this.courses = courses);
+  }
+
+  ngOnInit(): void {
+    this.getCourses();
+  }
+
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedCourse.id]);
+  }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.courseService.create(name)
+      .then(hero => {
+        this.courses.push(hero);
+        this.selectedCourse = null;
+      });
+  }
+
+  delete(hero: Course): void {
+  this.courseService
+      .delete(hero.id)
+      .then(() => {
+        this.courses = this.courses.filter(h => h !== hero);
+        if (this.selectedCourse === hero) { this.selectedCourse = null; }
+      });
+}
+
+
 
 }

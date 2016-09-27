@@ -3,8 +3,8 @@
     <div class="panel-body">
         Id: {{course.id}} <hr/>
         <input [(ngModel)]="course.name"/>
+        <button (click)="save()">Save</button>
     </div>
-
-    <button class="btn btn-primary" (click)="goBack()"> back </button>
-
 </div>
+
+<button class="btn btn-primary" (click)="goBack()"> back </button>

@@ -1,5 +1,5 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import {Course} from './course'
@@ -9,7 +9,6 @@ import { CourseService} from './course.service';
 @Component({
     selector: 'my-course-detail',
     templateUrl: './app/course-detail.component.html',
-    providers:[CourseService]
 })
 export class CourseDetailComponent {
 
@@ -28,5 +27,11 @@ export class CourseDetailComponent {
     goBack(): void {
      window.history.back();
     }
+
+
+    save(): void {
+  this.courseService.update(this.course)
+    .then(() => this.goBack());
+}
 
 }

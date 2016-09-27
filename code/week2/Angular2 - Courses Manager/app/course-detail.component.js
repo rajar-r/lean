@@ -28,6 +28,11 @@ var CourseDetailComponent = (function () {
     CourseDetailComponent.prototype.goBack = function () {
         window.history.back();
     };
+    CourseDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.courseService.update(this.course)
+            .then(function () { return _this.goBack(); });
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', course_1.Course)
@@ -36,7 +41,6 @@ var CourseDetailComponent = (function () {
         core_1.Component({
             selector: 'my-course-detail',
             templateUrl: './app/course-detail.component.html',
-            providers: [course_service_1.CourseService]
         }), 
         __metadata('design:paramtypes', [course_service_1.CourseService, router_1.ActivatedRoute])
     ], CourseDetailComponent);
