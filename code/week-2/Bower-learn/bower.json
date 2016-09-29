@@ -1,0 +1,21 @@
+{
+  "name": "Bower-learn",
+  "homepage": "https://github.com/nagabhushanamn/DEP-PCC-LeanPortal",
+  "authors": [
+    "nagabhushanamn <nagabhushanamn@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}
