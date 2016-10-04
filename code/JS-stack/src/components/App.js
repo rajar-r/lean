@@ -1,39 +1,39 @@
-
-
 import React from 'react';
+import MessageList from './MessageList';
+import ChannelList from './ChannelList';
+import MessageBox from './MessageBox';
+import mui from 'material-ui'
+import ActionTypes from '../actions'
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+var ThemeManager = new mui.Styles.ThemeManager();
+var Colors = mui.Styles.Colors;
+var AppBar = mui.AppBar;
 
 class App extends React.Component {
-
-    constructor() {
-        super();
-        this.state = {
-            messages: [
-                'hello , how are you',
-                'im fine , and you',
-                'wru..',
-                'im in bengalore'
-            ]
-        };
-    }
-
-    render() {
-        //debugger;
-        var messageNodes = this.state.messages.map((message,index) => { 
-            return (
-                <div key={index}>
-                    {message}
-                </div>  
-            );  
-        });
-        
-        return (
-            <div>
-                {messageNodes}  
-            </div>    
-        );
-
-    }
-
+  
+  render(){
+    return (
+      <div>
+        App
+      </div>
+    );
+  }
 }
 
-export default App;
+
+  
+// map store-current to comp's properties instead-of subscribing mannulay
+function mapStateToProps(state) {
+    return {messages:state}
+}
+function mapDispatchToProps(dispath) {
+    return {actions:bindActionCreators(ActionTypes,dispath)};   
+}
+
+
+// Connects a React component to a Redux store.
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
