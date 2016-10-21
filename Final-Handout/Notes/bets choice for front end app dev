@@ -1,0 +1,73 @@
+
+
+   Front-End Tech/Tools
+   ------------------------
+   
+
+   Language 
+   
+     --> Javascript  
+     
+   Module spec
+   
+     --> commonJS  
+     --> ES6 modules ( future )
+    
+   Transpilers/compilers/polyfils
+   
+     --> babel ( best )
+     --> typescript compiler  ( if code code written in Typescript) 
+
+    Mudule Bundler / Loader ( build )  
+   
+     --> Webpack 
+     
+    Testing F.Ws
+    
+     --> Mocha  + assertion and mock libraries
+     
+    Test Runners
+    
+     --> karma ( unit )
+     --> Protractor  ( e2e )
+     
+     
+     JS Libraries and F.Ws
+     
+     --> React  : View Library
+         or
+     --> Angular-2 : Framework  ( new )
+     
+        +
+        
+        other functional-libraries
+     
+     
+     State Management Libraries
+     
+     --> Flux Pattern
+     
+         impln : Redux
+         
+      
+      Responsive View F.Ws
+      
+      --> bootstrap
+      
+      or
+      
+      --> Material UI F.ws  ( future )
+      
+                  
+         
+      ----------------------------------   
+     
+          
+     
+     
+     
+      
+       
+        
+          
+         

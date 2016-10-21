@@ -1,0 +1,44 @@
+{
+  "name": "Product",
+  "plural": "products",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "mysql": {
+      "table": "products"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "make": {
+      "type": "date",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "reviews": {
+      "type": "hasMany",
+      "model": "Review",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,218 @@
+
+
+JavaScript Libraries
+---------------------
+
+
+1. jQuery: http://jquery.com/
+    A fast, small, and feature-rich JavaScript library.
+
+
+2. BackBoneJS: http://backbonejs.org/
+    Give your JS app some backbone with models, views, collections, & events.
+
+
+3.1 D3.js: https://d3js.org/
+    A JavaScript library for manipulating documents based on data.
+
+3.2 http://www.highcharts.com/
+
+
+4. React: https://facebook.github.io/react/
+    Facebook’s Javascript library developed for building user interfaces.
+
+   
+5. jQuery UI: http://jqueryui.com/
+    A curated set of user interface interactions, effects, widgets, and themes.
+
+
+6. jQuery Mobile: http://jquerymobile.com/
+    HTML5-based user interface system designed to make responsive web sites.
+
+
+7. Underscore.js: http://underscorejs.org/
+    Functional programming helpers without extending any built-in objects.    
+
+8. Moment.js: http://momentjs.com/
+    Parse, validate, manipulate, and display dates in JavaScript.    
+
+
+9. Lodash: https://lodash.com/
+    A modern utility library delivering modularity, performance, & extras. 
+
+
+----------------------------------------------------------       
+
+Front-end Frameworks
+
+1. Bootstrap: http://getbootstrap.com/
+    HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+
+2. Foundation: http://foundation.zurb.com/
+    Family of responsive front-end frameworks that make it easy to design beautiful responsive websites, apps and emails that look amazing on any device.    
+
+
+3. Semantic UI: http://semantic-ui.com/
+    Development framework that helps create beautiful, responsive layouts using human-friendly HTML.
+
+4. uikit: https://getuikit.com/
+    A lightweight and modular front-end framework for developing fast and powerful web interfaces.
+
+----------------------------------------------------------   
+
+Web Application Frameworks
+
+
+1. AngularJS: https://angularjs.org/   & Angular 2.0: http://angular.io
+
+2. Ember.js : http://emberjs.com/
+
+3. Meteor: https://www.meteor.com/
+    Full-stack JavaScript app platform that assembles all the pieces you need to build modern web and mobile apps, with a single JavaScript codebase.
+
+------------------------------------------------------------   
+
+
+Task Runners / Package Managers
+
+
+1. Grunt: http://gruntjs.com/
+    JavaScript task runner all about automation.
+
+2. Gulp: http://gulpjs.com/
+    Keeps things simple and makes complex tasks manageable, while automating and enhancing your workflow.
+
+3. npm: https://www.npmjs.com/
+    Pack manager for JavaScript.
+
+4. Bower: https://bower.io/
+    A web package manager. Manage components that contain HTML, CSS, JavaScript, fonts or even image files.    
+
+
+5. WebPack: https://webpack.github.io/
+    MODULE BUNDLER
+
+
+------------------------------------------------------------  
+
+
+CSS Preprocessors
+
+
+1. Sass: http://sass-lang.com/
+    A very mature, stable, and powerful professional grade CSS extension
+
+
+2. Less: http://lesscss.org/
+    As an extension to CSS that is also backwards compatible with CSS. 
+    This makes learning Less a breeze, and if in doubt, lets you fall back to vanilla CSS.
+
+3. Stylus: http://stylus-lang.com/
+    A new language, providing an efficient, dynamic, and expressive way to generate CSS. 
+    Supporting both an indented syntax and regular CSS style.    
+
+
+------------------------------------------------------------  
+
+
+material design principles
+
+
+1. https://material.google.com/
+
+
+
+------------------------------------------------------------  
+
+
+
+Text Editors / Code Editors    
+
+1. Atom: https://atom.io/
+    A text editor that’s modern, approachable, yet hackable to the core. One of my favorites!
+
+2. Sublime Text: 
+    A sophisticated text editor for code, markup and prose with great performance.    
+
+3. VScode: https://code.visualstudio.com
+
+
+------------------------------------------------------------  
+
+
+Icons
+
+1. Font Awesome: http://fontawesome.io/
+    Scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS.
+
+2. IconMonster: http://iconmonstr.com/
+    A free, high quality, monstrously big and continuously growing source of simple icons. One of our favorites!
+
+3. Icons8: https://icons8.com/
+    An extensive list of highly customizable icons created by a single design team.
+
+4. IconFinder: https://www.iconfinder.com/
+    Iconfinder provides beautiful icons to millions of designers and developers. 
+
+5. Fontello: http://fontello.com/
+    Tool to build custom fonts with icons.
+
+------------------------------------------------------------  
+
+
+Build Tools
+-------------
+
+1. grunt  
+2. gulp
+3. brunch
+
+
+5. Webpack  ( mudule bundlers + module loaders )  ( my choice )
+
+   ref : https://github.com/petehunt/webpack-howto
+
+-------------------------------------------------
+
+
+
+Compilers / Polyfills / Transpilers
+
+
+--> closure Compilers
+
+--> tracure
+
+--> es6shimp
+
+
+--> babel    ( our choice )
+
+
+--> typescript
+
+------------------------------------------------------
+
+
+JavaScript - UnitTesting
+
+
+Testing F.W
+
+--> support to write test-cases
+--> run test-cases
+--> generate reports.
+
+
+1. Qunit  -->  Jquery Team
+
+2. Jasmine
+
+3. Mocha
+
+   
+
+   
+
+
+        
